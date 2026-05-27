@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "faf-memory": {
+    "core": {
       "command": "uvx",
       "args": ["faf-memory-mcp"]
     }

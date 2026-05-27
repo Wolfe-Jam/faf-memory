@@ -1,7 +1,7 @@
 {
   "name": "faf-memory",
   "description": "Permanent Memory Layer (PML) for Claude Code. .fafm is an IANA-registered structured file (application/vnd.fafm+yaml) — cross-vendor persistent AI memory. Offline-first, your file, your soul. Wraps the faf-memory-mcp server. 400+x faster type-filter queries vs grep (falsifiable receipt: Wolfe-Jam/faf-memory-proof).",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "James Wolfe",
     "email": "team@faf.one",
