@@ -1,0 +1,6 @@
+# local dev artifacts — never ship in the plugin
+.claude/settings.local.json
+.DS_Store
+
+# default MCP soul output — a live memory file, not plugin content
+soul.fafm

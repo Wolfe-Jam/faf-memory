@@ -9,11 +9,16 @@ Your Claude doesn't remember yesterday. **`.fafm` is the file that fixes that** 
 
 ## Install
 
-```
-/plugin install faf-memory
+```bash
+claude plugin marketplace add anthropics/claude-plugins-community
+claude plugin install faf-memory@claude-community
 ```
 
+Or in-session: `/plugin install faf-memory@claude-community`
+
 That's it. The plugin wires the [`faf-memory-mcp`](https://github.com/Wolfe-Jam/faf-memory-mcp) server into Claude Code via `uvx`, exposing five tools.
+
+> **Prerequisite:** [`uv`](https://docs.astral.sh/uv/) — the plugin launches its MCP server with `uvx`. First run builds dependencies (~90s); warm starts are instant.
 
 ## What you get
 
