@@ -43,14 +43,16 @@ Memory lives in **`.fafm`** — plain YAML, IANA-registered. Diffable like code.
 - The `.fafm` file grows readably — open it, diff it, share it.
 - Open the same file in [`grok-faf-voice`](https://pypi.org/project/grok-faf-voice/) — same facts. Cross-vendor proven.
 
-## Complementary, not competing
+## Works with Claude's memory
 
-`.fafm` is a **structured source**. It works alongside Claude Code's own memory, not against it:
+Claude Code already remembers: `CLAUDE.md` holds your project instructions, and auto memory keeps what Claude learns as you work. faf-memory replaces neither. It adds a **specialist layer** for the facts you want kept exactly:
 
-- **`claude-md-management`** maintains the rendered `CLAUDE.md`; `.fafm` is its memory sibling
-- **Community `remember`** keeps conversational daily logs; `.fafm` is its structured peer
+- **Typed and ranked.** Every fact carries a type, a priority and tags, so `recall` filters and ranks instead of searching prose.
+- **Deterministic.** The same query returns the same facts, every session.
+- **Portable.** One `.fafm` file, IANA-registered, that any MCP host can open (Cursor, Grok and others). Your memory isn't tied to one tool.
+- **Yours.** Plain YAML in your project: read it, diff it, commit it.
 
-PML is the **standard underneath** — IANA-registered, cross-vendor, offline-first.
+Let Claude's memory keep what Claude learns. Put the facts you decide must stick in faf-memory.
 
 ## The receipt
 
@@ -65,7 +67,7 @@ Biases toward **deterministic recall** (substring + type + tags + priority + rec
 - **This plugin** — `faf-memory` — wraps `faf-memory-mcp`
 - [`Wolfe-Jam/faf-memory-mcp`](https://github.com/Wolfe-Jam/faf-memory-mcp) — the MCP server
 - [`Wolfe-Jam/faf-memory-proof`](https://github.com/Wolfe-Jam/faf-memory-proof) — the falsifiable receipt
-- [`Wolfe-Jam/faf-plugin`](https://github.com/Wolfe-Jam/faf-plugin) — sibling: `.faf` context (FCL)
+- [FAF Skills](https://github.com/Wolfe-Jam/faf-skills) — sibling: `.faf` project context for Claude Code
 - [`claude-fafm-sdk`](https://pypi.org/project/claude-fafm-sdk/) — the open Python SDK
 - [`Wolfe-Jam/faf`](https://github.com/Wolfe-Jam/faf) — the format spec + IANA registration
 
