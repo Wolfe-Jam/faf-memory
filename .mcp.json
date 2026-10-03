@@ -2,7 +2,9 @@
   "mcpServers": {
     "core": {
       "command": "uvx",
-      "args": ["faf-memory-mcp"]
+      "args": [
+        "faf-memory-mcp==0.1.1"
+      ]
     }
   }
 }

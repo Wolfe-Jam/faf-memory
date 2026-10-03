@@ -9,14 +9,18 @@ Your Claude doesn't remember yesterday. **`.fafm` is the file that fixes that** 
 
 ## Install
 
+Not in Anthropic's directory yet (review pending). Until then, install from the FAF marketplace:
+
 ```bash
-claude plugin marketplace add anthropics/claude-plugins-community
-claude plugin install faf-memory@claude-community
+claude plugin marketplace add Wolfe-Jam/faf-plugins
+claude plugin install faf-memory@faf-plugins
 ```
 
-Or in-session: `/plugin install faf-memory@claude-community`
+The plugin wires the [`faf-memory-mcp`](https://github.com/Wolfe-Jam/faf-memory-mcp) server into Claude Code via `uvx`, exposing five tools.
 
-That's it. The plugin wires the [`faf-memory-mcp`](https://github.com/Wolfe-Jam/faf-memory-mcp) server into Claude Code via `uvx`, exposing five tools.
+## What it runs
+
+One local MCP server, `faf-memory-mcp==0.1.1`, started with `uvx` (downloaded from PyPI on first run). It reads and writes a `.fafm` file on your machine and makes no network calls of its own. The plugin collects no data. Support: team@faf.one.
 
 > **Prerequisite:** [`uv`](https://docs.astral.sh/uv/) — the plugin launches its MCP server with `uvx`. First run builds dependencies (~90s); warm starts are instant.
 
@@ -41,11 +45,10 @@ Memory lives in **`.fafm`** — plain YAML, IANA-registered. Diffable like code.
 
 ## Complementary, not competing
 
-`.fafm` is the **structured source**. It sits alongside (not against) the rest of Anthropic's memory stack:
+`.fafm` is a **structured source**. It works alongside Claude Code's own memory, not against it:
 
-- **Anthropic `memory_20250818`** tool contract — speakable via the proprietary [`fafm-engine`](https://github.com/Wolfe-Jam/fafm-engine) (enterprise lane)
-- **Anthropic `claude-md-management`** — maintains the rendered `CLAUDE.md`; `.fafm` is its memory sibling
-- **Community `remember`** — conversational daily logs; `.fafm` is its structured peer
+- **`claude-md-management`** maintains the rendered `CLAUDE.md`; `.fafm` is its memory sibling
+- **Community `remember`** keeps conversational daily logs; `.fafm` is its structured peer
 
 PML is the **standard underneath** — IANA-registered, cross-vendor, offline-first.
 
